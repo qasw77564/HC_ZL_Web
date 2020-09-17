@@ -1,6 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Nunito&display=swap");
-h1 {
-  color: blue;
-  font-family: 'Dancing Script', cursive;
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&display=swap" rel="stylesheet');
+* {
+  font-family: 'Nanum Myeongjo', serif;
 }
 /*# sourceMappingURL=style.css.map */
