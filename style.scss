@@ -1,5 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&display=swap" rel="stylesheet');
 
+$color-main:#252525;
+$color-sub:#6EB3FF;
+
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Nanum Myeongjo', serif;
+}
+
+#navigation {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 20px 0;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    .logo{
+        font-size: 32px;
+        text-decoration: none;
+        &:hover{
+            color: $color-sub;
+        }
+    }
+    .social {
+        img {
+            filter: invert(0%) sepia(2%) saturate(7478%) hue-rotate(111deg) brightness(96%) contrast(99%);
+            translate: 0.5s;
+
+            &:hover {
+                filter: invert(76%) sepia(39%) saturate(800%) hue-rotate(66deg) brightness(101%) contrast(104%);
+            }
+        }
+    }
 }
