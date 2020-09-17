@@ -12,9 +12,25 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-  padding: 20px 0;
+  padding: 20px 80px;
   -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  width: 100%;
+}
+
+#navigation .link a {
+  text-decoration: none;
+  padding: 30px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#navigation .link a:hover {
+  color: #6EB3FF;
 }
 
 #navigation .logo {
@@ -26,14 +42,63 @@
   color: #6EB3FF;
 }
 
+#navigation .social {
+  text-align: right;
+}
+
 #navigation .social img {
   -webkit-filter: invert(0%) sepia(2%) saturate(7478%) hue-rotate(111deg) brightness(96%) contrast(99%);
           filter: invert(0%) sepia(2%) saturate(7478%) hue-rotate(111deg) brightness(96%) contrast(99%);
   translate: 0.5s;
+  width: 32px;
+  margin-left: 30px;
 }
 
 #navigation .social img:hover {
   -webkit-filter: invert(76%) sepia(39%) saturate(800%) hue-rotate(66deg) brightness(101%) contrast(104%);
           filter: invert(76%) sepia(39%) saturate(800%) hue-rotate(66deg) brightness(101%) contrast(104%);
+}
+
+#banner {
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+}
+
+#about {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 300px;
+  font-family: "Nanum Myeongjo", serif;
+  letter-spacing: 20px;
+  padding-left: 20px;
+  margin-top: 100px;
+}
+
+#about p {
+  padding: 30px;
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 36px;
+  padding: 20px;
+}
+
+.button-box {
+  padding: 10px 60px;
+  border: 2px solid #252525;
+  text-decoration: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.button-box:hover {
+  background: #252525;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */
