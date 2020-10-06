@@ -1,18 +1,18 @@
+@charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&display=swap" rel="stylesheet');
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Nanum Myeongjo', serif;
+  font-family: 微軟正黑體;
+  color: #252525;
 }
 
 #navigation {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  padding: 20px 80px;
+  padding: 20px 120px;
   -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
   -webkit-box-align: center;
@@ -20,49 +20,117 @@
           align-items: center;
   position: fixed;
   width: 100%;
+  background: white;
+  z-index: 1;
 }
 
-#navigation .link a {
+@media screen and (min-width: 1025px) {
+  #navigation {
+        grid-template-areas: "logo link social";
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #navigation {
+        grid-template-areas: "logo social menu";
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #navigation {
+    padding: 10px 6px;
+  }
+}
+
+#navigation #menu {
+  grid-area: menu;
+}
+
+@media screen and (min-width: 1025px) {
+  #navigation #menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #navigation #menu {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #navigation #menu {
+    width: 32px;
+  }
+}
+
+.logo {
+  font-family: "Bebas Neue", cursive;
+  font-size: 42px;
   text-decoration: none;
-  padding: 30px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  letter-spacing: 2px;
+  grid-area: logo;
 }
 
-#navigation .link a:hover {
-  color: #6EB3FF;
+.logo:hover {
+  color: #6eb3ff;
 }
 
-#navigation .logo {
-  font-size: 32px;
+.link {
+  text-align: center;
+  grid-area: link;
+}
+
+.link a {
   text-decoration: none;
+  padding: 30px 30px 30px 40px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  letter-spacing: 10px;
 }
 
-#navigation .logo:hover {
-  color: #6EB3FF;
+.link a:hover {
+  color: #6eb3ff;
 }
 
-#navigation .social {
+@media screen and (max-width: 1024px) {
+  .link {
+    display: none;
+  }
+}
+
+.social {
   text-align: right;
+  grid-area: social;
 }
 
-#navigation .social img {
-  -webkit-filter: invert(0%) sepia(2%) saturate(7478%) hue-rotate(111deg) brightness(96%) contrast(99%);
-          filter: invert(0%) sepia(2%) saturate(7478%) hue-rotate(111deg) brightness(96%) contrast(99%);
-  translate: 0.5s;
+.social img {
+  -webkit-filter: invert(9%) sepia(11%) saturate(6%) hue-rotate(336deg) brightness(100%) contrast(86%);
+          filter: invert(9%) sepia(11%) saturate(6%) hue-rotate(336deg) brightness(100%) contrast(86%);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   width: 32px;
   margin-left: 30px;
 }
 
-#navigation .social img:hover {
-  -webkit-filter: invert(76%) sepia(39%) saturate(800%) hue-rotate(66deg) brightness(101%) contrast(104%);
-          filter: invert(76%) sepia(39%) saturate(800%) hue-rotate(66deg) brightness(101%) contrast(104%);
+.social img:hover {
+  -webkit-filter: invert(63%) sepia(8%) saturate(2974%) hue-rotate(177deg) brightness(105%) contrast(102%);
+          filter: invert(63%) sepia(8%) saturate(2974%) hue-rotate(177deg) brightness(105%) contrast(102%);
+}
+
+@media screen and (max-width: 767px) {
+  .social img {
+    margin-left: 0;
+  }
 }
 
 #banner {
   width: 100%;
   height: 100vh;
-  background: #fff;
+  background: #eee;
 }
 
 #about {
@@ -72,11 +140,26 @@
 }
 
 #about h2 {
-  font-size: 300px;
-  font-family: "Nanum Myeongjo", serif;
-  letter-spacing: 20px;
-  padding-left: 20px;
-  margin-top: 100px;
+  font-size: 420px;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 30px;
+  padding-left: 30px;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 1024px) {
+  #about h2 {
+    margin-top: 200px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #about h2 {
+    font-size: 64px;
+    letter-spacing: 10px;
+    padding-left: 10px;
+    margin-top: 100px;
+  }
 }
 
 #about p {
@@ -86,7 +169,8 @@
 
 .title {
   font-size: 36px;
-  padding: 20px;
+  padding: 35px;
+  text-align: center;
 }
 
 .button-box {
@@ -100,5 +184,118 @@
 .button-box:hover {
   background: #252525;
   color: white;
+}
+
+.button-div {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#works {
+  height: 100vh;
+  background: #f9f9f9;
+}
+
+@media screen and (max-width: 1024px) {
+  #works {
+    height: auto;
+    padding-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #works {
+    height: auto;
+    padding-bottom: 100px;
+  }
+}
+
+#works #work-box {
+  width: 1200px;
+  display: -ms-grid;
+  display: grid;
+  margin: 0 auto;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (340px)[2];
+      grid-template-rows: repeat(2, 340px);
+  grid-gap: 20px 35px;
+}
+
+@media screen and (max-width: 1024px) {
+  #works #work-box {
+    width: 100%;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #works #work-box {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+#works #work-box .work-box-small img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  background: #eee;
+}
+
+#works #work-box .work-box-small h2 {
+  text-align: center;
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+}
+
+#works #work-box .work-box-small span {
+  display: inline-block;
+  border: 1.5px solid #000;
+  border-radius: 30px;
+  padding: 3px 12px;
+  margin-top: 12px;
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+footer {
+  background: #252525;
+  padding: 90px 0;
+  text-align: center;
+}
+
+footer .logo {
+  color: #cdcdcd;
+}
+
+footer .link a {
+  color: #cdcdcd;
+}
+
+footer .social {
+  text-align: center;
+}
+
+footer .social img {
+  -webkit-filter: invert(86%) sepia(0%) saturate(0%) hue-rotate(73deg) brightness(98%) contrast(91%);
+          filter: invert(86%) sepia(0%) saturate(0%) hue-rotate(73deg) brightness(98%) contrast(91%);
+  margin: 30px 20px;
+}
+
+footer #copyright {
+  color: #cdcdcd;
+  font-size: 8px;
+  margin-top: 50px;
+}
+
+.logo-small {
+  color: #cdcdcd;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 3px;
+  padding-left: 3px;
+  font-size: 16px;
 }
 /*# sourceMappingURL=style.css.map */
